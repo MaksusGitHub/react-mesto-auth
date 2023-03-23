@@ -12,10 +12,15 @@ import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import api from "../utils/Api";
 import { Routes, Route, Navigate } from 'react-router-dom';
 import ProtectedRoute from './ProtectedRoute';
+import Login from './Login';
+import Register from './Register';
+import InfoTooltip from './InfoTooltip';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
+  const [isAuthSuccess, setIsAuthSuccess] = useState(false);
   const [cards, setCards] = useState([]);
+  const [isAuthResultPopupOpen, setIsAuthResultPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
@@ -82,6 +87,7 @@ function App() {
     setIsEditProfilePopupOpen(false);
     setIsAddPlacePopupOpen(false);
     setIsImagePopupOpen(false);
+    setIsAuthResultPopupOpen(false);
   }
 
   function handleUpdateProfile(user) {
@@ -119,8 +125,8 @@ function App() {
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
         <Routes>
-          <Route path="/sign-up" />
-          <Route path="/sign-in" />
+          <Route path="/sign-up" element={<Register />} />
+          <Route path="/sign-in" element={<Login />} />
           <Route
             path="/"
             element={
@@ -157,6 +163,11 @@ function App() {
         />
         <PopupWithForm title="Вы уверены?" name="card-delete" onClose={closeAllPopups} btnName="Да"/>
         <ImagePopup card={selectedCard} isOpen={isImagePopupOpen} onClose={closeAllPopups} />
+        <InfoTooltip
+          isSuccess={isAuthSuccess}
+          isOpen={isAuthResultPopupOpen}
+          onClose={closeAllPopups}
+        />
       </CurrentUserContext.Provider>
     </div>
   );
