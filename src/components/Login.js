@@ -1,12 +1,10 @@
 import AuthForm from "./AuthForm";
+import * as Auth from './Auth';
 
-const Login = (props) => {
-  const {
-    
-  } = props;
+const Login = ({ handleLogin }) => {
 
   return (
-    <AuthForm title="Вход" btnName="Войти" />
+    <AuthForm title="Вход" btnName="Войти" onSubmit={Auth.authorize} status="авторизация" handleLogin={handleLogin} />
   )
 }
 
