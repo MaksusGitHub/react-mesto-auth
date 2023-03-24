@@ -6,3 +6,10 @@
   color: #000;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .popup__auth-status {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
