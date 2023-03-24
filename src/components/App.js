@@ -11,7 +11,7 @@ import AddPlacePopup from './AddPlacePopup';
 import api from "../utils/Api";
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import ProtectedRoute from './ProtectedRoute';
-import { getContent } from './Auth';
+import { getContent } from '../utils/Auth';
 import Login from './Login';
 import Register from './Register';
 import InfoTooltip from './InfoTooltip';
