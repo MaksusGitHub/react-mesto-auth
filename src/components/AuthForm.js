@@ -1,20 +1,13 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const AuthForm = (props) => {
   const {
     title,
     btnName,
     onSubmit,
-    status,
-    handleLogin,
-    setIsAuthSuccess,
-    handleAuthResultPopupOpen
   } = props;
 
   const [formValue, setFormValue] = useState({ password: '', email: '' });
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,28 +21,8 @@ const AuthForm = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { password, email } = formValue;
-    if (status === "регистрация") {
-      onSubmit(password, email).then(() => {
-        navigate('/signin', { replace: true });
-        setIsAuthSuccess(true);
-        handleAuthResultPopupOpen(true);
-      })
-        .catch(err => {
-          setIsAuthSuccess(false);
-          handleAuthResultPopupOpen(true);
-          console.log(err);
-          return;
-      })
-    } else {
-      onSubmit(password, email).then((res) => {
-        if (res.token) {
-          setFormValue({ password: '', email: '' });
-          handleLogin(email);
-          navigate('/', { replace: true });
-        }
-      })
-        .catch(err => console.log(err));
-    }
+    onSubmit(password, email)
+    setFormValue({ password: '', email: '' });
   }
 
   return (
