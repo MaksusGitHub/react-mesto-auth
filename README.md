@@ -22,7 +22,7 @@
 ### Для начала
 * Установите [Node.js](https://nodejs.org/en/download/)
 * Установите [Git Bash для Windows OS](https://gitforwindows.org/)
-* Склонируйте проект https://github.com/izhubrov/mesto-react.git
+* Склонируйте проект https://github.com/MaksusGitHub/react-mesto-auth.git
 
 ### Установка
 * Установите необходимые зависимости из package.json
