@@ -14,21 +14,17 @@
 
 ### Применяемое API
 
-* https://mesto.nomoreparties.co/v1 для работы с карточками и профилем пользователя
-* https://auth.nomoreparties.co для регистрации и авторизации пользователя
+- https://mesto.nomoreparties.co/v1 для работы с карточками и профилем пользователя
+- https://auth.nomoreparties.co для регистрации и авторизации пользователя
 
 ## Как использовать
 
-### Для начала
-* Установите [Node.js](https://nodejs.org/en/download/)
-* Установите [Git Bash для Windows OS](https://gitforwindows.org/)
-* Склонируйте проект https://github.com/MaksusGitHub/react-mesto-auth.git
-
 ### Установка
-* Установите необходимые зависимости из package.json
+- Установите [Node.js](https://nodejs.org/en/download/)
+- Установите [Git Bash для Windows OS](https://gitforwindows.org/)
+- Склонируйте проект https://github.com/MaksusGitHub/react-mesto-auth.git
+- Установите необходимые зависимости из package.json
 
-### Работа, запуск, деплой проекта из директории проекта
-* Для локального запуска введите команду npm run start (Страница откроется по адресу [http://localhost:3000](http://localhost:3000) для просмотра в браузере).
-* Для сборки проекта введите команду npm run build
-* Для работы с gh-pages установите пакет gh-pages следующей командой npm install gh-pages --save-dev
-* Для деплоя проекта введите команду npm run deploy
+### Запуск
+- Для сборки проекта введите команду npm run build
+- Для локального запуска введите команду npm run start (Страница откроется по адресу [http://localhost:3000](http://localhost:3000) для просмотра в браузере).
